@@ -96,7 +96,7 @@ rm -rf /tmp/lmao
 printf "\n\n"
 echo -e "\033[94mipa2deb: \033[0mbuilding package in $(dirname $IPAPATH)/${IDENTIFIER}_${VERSION}_${ARCH}.deb"
 echo "This might take a while..."
-t="$(dpkg --build -Zgzip -z9 /tmp/test)"
+t="$(dpkg-deb --build -Zgzip -z9 /tmp/test)"
 mv -f /tmp/test.deb "$(dirname $IPAPATH)/${IDENTIFIER}_${VERSION}_${ARCH}.deb"
 rm -rf /tmp/test
 echo -e "\033[94mipa2deb\033[0m: if there weren't any errors, it should've worked"
